@@ -1,0 +1,13 @@
+<!-- service/templates/service/customer_form.html -->
+
+{% extends 'service/base.html' %}
+
+{% block content %}
+    <h2>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Customer</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    <a href="{% url 'customer_list' %}" class="btn btn-secondary mt-3">Back to Customer List</a>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!-- service/templates/service/base.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vehicle Service Management</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'index' %}">Vehicle Service Management</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'customer_list' %}">Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'vehicle_list' %}">Vehicles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'service_record_list' %}">Service Records</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
